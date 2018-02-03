@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+        Title="Calculator" Height="600" Width="300" MinWidth="300" MinHeight="300">
+
+    <Grid Name="CalculatorDisplay">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <TextBlock Name="Output" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30px" Text="Testing"/>
+        <Button Name="AC" Grid.Row="1" Grid.Column="0">AC</Button>
+        <Button Name="NegativePositive" Grid.Row="1" Grid.Column="1">-/+</Button>
+        <Button Name="Percent" Grid.Row="1" Grid.Column="2">%</Button>
+        <Button Name="Divide" Grid.Row="1" Grid.Column="3">÷</Button>
+        <Button Name="Seven" Grid.Row="2" Grid.Column="0">7</Button>
+        <Button Name="Eight" Grid.Row="2" Grid.Column="1">8</Button>
+        <Button Name="Nine" Grid.Row="2" Grid.Column="2">9</Button>
+        <Button Name="Muliply" Grid.Row="2" Grid.Column="3">x</Button>
+        <Button Name="Four" Grid.Row="3" Grid.Column="0">4</Button>
+        <Button Name="Five" Grid.Row="3" Grid.Column="1">5</Button>
+        <Button Name="Six" Grid.Row="3" Grid.Column="2">6</Button>
+        <Button Name="Minus" Grid.Row="3" Grid.Column="3">-</Button>
+        <Button Name="One" Grid.Row="4" Grid.Column="0">1</Button>
+        <Button Name="Two" Grid.Row="4" Grid.Column="1">2</Button>
+        <Button Name="Three" Grid.Row="4" Grid.Column="2">3</Button>
+        <Button Name="Plus" Grid.Row="4" Grid.Column="3">+</Button>
+        <Button Name="Zero" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">0</Button>
+        <Button Name="Decimal" Grid.Row="5" Grid.Column="2">.</Button>
+        <Button Name="Equals" Grid.Row="5" Grid.Column="3">=</Button>
     </Grid>
 </Window>
