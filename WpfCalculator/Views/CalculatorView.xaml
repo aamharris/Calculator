@@ -4,9 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCalculator.Views"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=CalculatorViewModel}"
         mc:Ignorable="d"
          Title="Calculator" Height="600" Width="300" MinWidth="300" MinHeight="300">
 
+    <Window.InputBindings>
+        <KeyBinding Key="NumPad0" Command="{Binding NumericInputCommand}" CommandParameter="0"/>
+        <KeyBinding Key="NumPad1" Command="{Binding NumericInputCommand}" CommandParameter="1"/>
+        <KeyBinding Key="NumPad2" Command="{Binding NumericInputCommand}" CommandParameter="2"/>
+        <KeyBinding Key="NumPad3" Command="{Binding NumericInputCommand}" CommandParameter="3"/>
+        <KeyBinding Key="NumPad4" Command="{Binding NumericInputCommand}" CommandParameter="4"/>
+        <KeyBinding Key="NumPad5" Command="{Binding NumericInputCommand}" CommandParameter="5"/>
+        <KeyBinding Key="NumPad6" Command="{Binding NumericInputCommand}" CommandParameter="6"/>
+        <KeyBinding Key="NumPad7" Command="{Binding NumericInputCommand}" CommandParameter="7"/>
+        <KeyBinding Key="NumPad8" Command="{Binding NumericInputCommand}" CommandParameter="8"/>
+        <KeyBinding Key="NumPad9" Command="{Binding NumericInputCommand}" CommandParameter="9"/>
+    </Window.InputBindings>
+    
     <Grid Name="CalculatorDisplay">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -23,25 +37,25 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Name="Output" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30px" Text="Testing"/>
-        <Button Name="AC" Grid.Row="1" Grid.Column="0">AC</Button>
-        <Button Name="NegativePositive" Grid.Row="1" Grid.Column="1">-/+</Button>
-        <Button Name="Percent" Grid.Row="1" Grid.Column="2">%</Button>
-        <Button Name="Divide" Grid.Row="1" Grid.Column="3">÷</Button>
-        <Button Name="Seven" Grid.Row="2" Grid.Column="0">7</Button>
-        <Button Name="Eight" Grid.Row="2" Grid.Column="1">8</Button>
-        <Button Name="Nine" Grid.Row="2" Grid.Column="2">9</Button>
-        <Button Name="Muliply" Grid.Row="2" Grid.Column="3">x</Button>
-        <Button Name="Four" Grid.Row="3" Grid.Column="0">4</Button>
-        <Button Name="Five" Grid.Row="3" Grid.Column="1">5</Button>
-        <Button Name="Six" Grid.Row="3" Grid.Column="2">6</Button>
-        <Button Name="Minus" Grid.Row="3" Grid.Column="3">-</Button>
-        <Button Name="One" Grid.Row="4" Grid.Column="0">1</Button>
-        <Button Name="Two" Grid.Row="4" Grid.Column="1">2</Button>
-        <Button Name="Three" Grid.Row="4" Grid.Column="2">3</Button>
-        <Button Name="Plus" Grid.Row="4" Grid.Column="3">+</Button>
-        <Button Name="Zero" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">0</Button>
-        <Button Name="Decimal" Grid.Row="5" Grid.Column="2">.</Button>
-        <Button Name="Equals" Grid.Row="5" Grid.Column="3">=</Button>
+        <TextBlock Name="Output" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="30px" Text="{Binding CalculatorDisplay}"/>
+        <Button Name="AC" Grid.Row="1" Grid.Column="0" Content="AC" Command="{Binding AllClearCommand}"/>
+        <Button Name="NegativePositive" Grid.Row="1" Grid.Column="1" Content="-/+"/>
+        <Button Name="Percent" Grid.Row="1" Grid.Column="2" Content="%"/>
+        <Button Name="Divide" Grid.Row="1" Grid.Column="3" Content="÷"/>
+        <Button Name="Seven" Grid.Row="2" Grid.Column="0" Content="7" Command="{Binding NumericInputCommand}" CommandParameter="7"/>
+        <Button Name="Eight" Grid.Row="2" Grid.Column="1" Content="8" Command="{Binding NumericInputCommand}" CommandParameter="8"/>
+        <Button Name="Nine" Grid.Row="2" Grid.Column="2" Content="9" Command="{Binding NumericInputCommand}" CommandParameter="9"/>
+        <Button Name="Muliply" Grid.Row="2" Grid.Column="3" Content="x"/>
+        <Button Name="Four" Grid.Row="3" Grid.Column="0" Content="4" Command="{Binding NumericInputCommand}" CommandParameter="4"/>
+        <Button Name="Five" Grid.Row="3" Grid.Column="1" Content="5" Command="{Binding NumericInputCommand}" CommandParameter="5"/>
+        <Button Name="Six" Grid.Row="3" Grid.Column="2" Content="6" Command="{Binding NumericInputCommand}" CommandParameter="6"/>
+        <Button Name="Minus" Grid.Row="3" Grid.Column="3" Content="-"/>
+        <Button Name="One" Grid.Row="4" Grid.Column="0" Content="1" Command="{Binding NumericInputCommand}" CommandParameter="1"/>
+        <Button Name="Two" Grid.Row="4" Grid.Column="1" Content="2" Command="{Binding NumericInputCommand}" CommandParameter="2"/>
+        <Button Name="Three" Grid.Row="4" Grid.Column="2" Content="3" Command="{Binding NumericInputCommand}" CommandParameter="3"/>
+        <Button Name="Plus" Grid.Row="4" Grid.Column="3" Content="+"/>
+        <Button Name="Zero" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="0" Command="{Binding NumericInputCommand}" CommandParameter="0"/>
+        <Button Name="Decimal" Grid.Row="5" Grid.Column="2" Content="."/>
+        <Button Name="Equal" Grid.Row="5" Grid.Column="3" Content="="/>
     </Grid>
 </Window>
