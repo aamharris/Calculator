@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:WpfCalculator"
              StartupUri="Views/CalculatorView.xaml">
     <Application.Resources>
-         
+        <local:ViewModelLocator x:Key="ViewModelLocator"/>
     </Application.Resources>
 </Application>
