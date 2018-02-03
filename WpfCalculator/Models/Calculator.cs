@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Calculator.ViewModels
+namespace WpfCalculator.Models
 {
-    public class CalculatorViewModel
+    public class Calculator
     {
     }
 }
